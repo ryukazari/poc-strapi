@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/edu-center-types",
+      "handler": "edu-center-type.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/edu-center-types/count",
+      "handler": "edu-center-type.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/edu-center-types/:id",
+      "handler": "edu-center-type.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/edu-center-types",
+      "handler": "edu-center-type.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/edu-center-types/:id",
+      "handler": "edu-center-type.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/edu-center-types/:id",
+      "handler": "edu-center-type.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

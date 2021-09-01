@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/edu-centers",
+      "handler": "edu-center.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/edu-centers/count",
+      "handler": "edu-center.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/edu-centers/:id",
+      "handler": "edu-center.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/edu-centers",
+      "handler": "edu-center.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/edu-centers/:id",
+      "handler": "edu-center.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/edu-centers/:id",
+      "handler": "edu-center.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
