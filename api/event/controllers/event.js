@@ -7,20 +7,22 @@
 
 module.exports = {
     changed: async (ctx) => {
-        const { id } = ctx.params;
-        //const result = await strapi.query('event').find({ id });
-        const result = await strapi.services.event.findOne({ id });
-        const emails = result.students.map(e => e.email);
-        console.log(emails);
-        await strapi.plugins['email'].services.email.send({
-            to: emails,
-            from: 'ryukazari@gmail.com',
-            subject: 'Date of the event changed',
-            text: 'Ola?',
-            html: `
-                <strong>adios</strong>
-            `,
-          });
-        ctx.send("eehh?");
+        try{
+            const { id } = ctx.params;
+            //const result = await strapi.query('event').find({ id });
+            const result = await strapi.services.event.findOne({ id });
+            const emails = result.students.map(e => e.email);
+            console.log(emails);
+            const emailOptions = {
+                to: emails,
+                subject: 'This is a test',
+                html: `<h1>Welcome!</h1><p>This is a test HTML email.</p>`,
+            }
+            await strapi.plugins['email'].services.email.send(emailOptions);
+            ctx.send("eehh?");
+        } catch(err) {
+            strapi.log.error(`Error sending email`, err)
+            ctx.send({ error: 'Error sending email' })
+        }
     }
 };
