@@ -1,13 +1,18 @@
-export default ({ env }) => ({
-    email: {
-      provider: 'sendmail', //sendgrid
-      providerOptions: {
-        apiKey: env('SENDGRID_API_KEY'),
-      },
-      settings: {
-        defaultFrom: 'juliasedefdjian@strapi.io',
-        defaultReplyTo: 'juliasedefdjian@strapi.io',
-        testAddress: 'juliasedefdjian@strapi.io',
+module.exports = ({ env }) => ({
+  email: {
+    provider: 'nodemailer',
+    providerOptions: {
+      host: env('SMTP_HOST', 'smtp.gmail.com'),
+      port: env('SMTP_PORT', 456),
+      secure: true,
+      auth: {
+        user: env('SMTP_USERNAME'),
+        pass: env('SMTP_PASSWORD'),
       },
     },
+    settings: {
+      defaultFrom: 'hello@example.com',
+      defaultReplyTo: 'hello@example.com',
+    },
+  },
 });

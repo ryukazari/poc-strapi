@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/events/changed/:id",
+      "handler": "event.changed",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
