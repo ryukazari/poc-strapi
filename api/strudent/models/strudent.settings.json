@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strudents",
+  "info": {
+    "name": "Student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "names": {
+      "type": "string",
+      "required": true
+    },
+    "surnames": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password"
+    },
+    "isVerified": {
+      "type": "boolean"
+    },
+    "isUnderage": {
+      "type": "boolean"
+    },
+    "events": {
+      "via": "students",
+      "collection": "event"
+    }
+  }
+}

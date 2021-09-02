@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "provinces",
+  "info": {
+    "name": "Province"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "model": "city",
+      "via": "provinces"
+    },
+    "districts": {
+      "via": "province",
+      "collection": "district"
+    }
+  }
+}

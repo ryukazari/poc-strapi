@@ -25,6 +25,10 @@
     "edu_center_type": {
       "model": "edu-center-type",
       "via": "edu_centers"
+    },
+    "district": {
+      "model": "district",
+      "via": "edu_centers"
     }
   }
 }

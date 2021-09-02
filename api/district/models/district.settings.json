@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "districts",
+  "info": {
+    "name": "District"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "province": {
+      "model": "province",
+      "via": "districts"
+    },
+    "edu_centers": {
+      "via": "district",
+      "collection": "edu-center"
+    }
+  }
+}
